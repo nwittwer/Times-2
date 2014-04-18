@@ -69,6 +69,7 @@
 				
 				
 				<!-- WP version -->
+				<div class="large-4 medium-4 small-6 columns">
 				<dl class="tabs vertical" data-tab>
 				  
 				  <a href="<?php echo home_url(); ?>/category/top-stories/"><span class="tabs-title">Featured Stories</span></a>
@@ -115,7 +116,9 @@
 				  
 				  <a href="<?php echo home_url(); ?>/category/top-stories/"><span class="tabs-title">View all &rarr;</span></a>
 				</dl>
+				</div>
 				
+				<div class="large-8 medium-8 small-6 columns">
 				<div class="tabs-content vertical" id="hp-image">
 				  <div class="content active" id="panel1a">
 					<?php query_posts('category_name=top-stories&showposts=1&offset=0'); ?>
@@ -143,6 +146,7 @@
 				    <?php wp_reset_query(); ?>
 				  </div>
 				</div>
+				</div>
 				
 				</div>
 				</div>
@@ -168,31 +172,38 @@
 		</dl>
 		
 		<div class="tabs-content">
+		
+		
 		  <div class="content active" id="panel2-1">
-		    <?php query_posts('showposts=3'); ?>
-		    		<?php include('loop-basic-2.php') ?>
+		    <?php query_posts('showposts=4'); ?>
+		    		<?php include('loop-2-small.php') ?>
 		    <?php wp_reset_query(); ?>
 		  </div>
+		  
 		  <div class="content" id="panel2-2">
 		    <?php query_posts('category_name=news&showposts=3'); ?>
 		    		<?php include('loop-basic-2.php') ?>
 		    <?php wp_reset_query(); ?>
 		  </div>
+		  
 		  <div class="content" id="panel2-3">
 		    <?php query_posts('category_name=sports&showposts=3'); ?>
 		    		<?php include('loop-basic-2.php') ?>
 		    <?php wp_reset_query(); ?>
 		  </div>
+		  
 		  <div class="content" id="panel2-4">
 		    <?php query_posts('category_name=features&showposts=3'); ?>
 		    		<?php include('loop-basic-2.php') ?>
 		    <?php wp_reset_query(); ?>
 		  </div>
+		  
 		  <div class="content" id="panel2-5">
 		    <?php query_posts('category_name=opinions&showposts=3'); ?>
 		    		<?php include('loop-basic-2.php') ?>
 		    <?php wp_reset_query(); ?>
 		  </div>
+		  
 		  <div class="content" id="panel2-6">
 		  <br/>
 		    <a href="<?php echo home_url();?>/category/columns"><span class="more">Columns</span></a>

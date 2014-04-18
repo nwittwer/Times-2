@@ -109,7 +109,7 @@
 	      </section>
 	
 	      <section class="middle tab-bar-section center">
-	        <div>the Page</div>>
+	        <!-- -->
 	      </section>
 	
 	      <section class="right-small">

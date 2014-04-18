@@ -15,7 +15,7 @@ body {
 }
 
 #header-bg {
-	background: #E7E7E7;
+	background: #fffff;
 	border-bottom: 1px solid #333;
 	border-color: #d7d7d7;
 	padding: 15px 0;
@@ -429,6 +429,10 @@ h1.logo:visited{
     font-size: 65pt;
 }*/
 
+h1.logo {
+	text-align: center;
+}
+
 h1.logo a img {
 	width: 250px;
 	margin: 20px 0 -10px;
@@ -439,6 +443,7 @@ h6.logo { /* motto/slogan for the site */
 	font-size: 13px;
 	color: #8B8B8B;
 	padding: 10px 0 15px 0;
+	text-align: center;
 }
 
 /* === First Featured Article - Homepage === */
@@ -446,7 +451,7 @@ h6.logo { /* motto/slogan for the site */
 
 #hp-image img {
 	max-height: 450px;
-	max-width: 760px;
+	/*max-width: 760px;*/
 	margin: 0 0 20px;
 }
 
@@ -797,6 +802,28 @@ outline: 0;
     max-width: 596px;
     overflow: hidden;
 }
+
+
+
+blockquote {
+  /*background: #f9f9f9;*/
+border-left: 5px solid #CC4141;
+margin: 1.5em 15px;
+padding: 1em 20px;
+}
+blockquote:before {
+  color: #ccc;
+  font-size: 4em;
+  line-height: auto;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+
+
 /* comments */
 
 .response-header {
@@ -1409,16 +1436,38 @@ span.edit-comment-link {
     .tabs-content.vertical > .content {
       padding: 0 0.9375em; }
 
+
+/* Tablets */
 @media only screen and (min-width: 40.063em) {
+	.tabs.vertical {
+		width: 100%!important;
+	}
+	
+	.tabs-content.vertical {
+		width: 100%;
+	}
+}
+
+/* Mobile */
+@media only screen and (max-width: 40em) {
   .tabs.vertical {
-    width: 20%;
+    width: 100%%;
     float: left;
     margin-bottom: 1.25rem; }
 
   .tabs-content.vertical {
-    width: 80%;
+    width: 100%%;
     float: left;
     margin-left: -1px; } 
+    
+   .tabs dd {
+   	position: relative;
+	margin-bottom: 0 !important;
+	top: 1px;
+	float: left;
+	width: 100%!important;
+	text-align: center!important;
+   }
 }
     
 
@@ -1563,7 +1612,7 @@ ul.off-canvas-list {
     margin: 0; }
   ul.off-canvas-list li a {
     display: block;
-    padding: 0.66667rem;
+    padding: 1rem;
     color: #C4C4C4;
     background: #505050;
     border-bottom: 1px solid #5F5F5F; }

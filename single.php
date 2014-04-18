@@ -16,8 +16,6 @@
 				        <h2 class="link"><?php the_title(); ?></h2>
 				        
 				        <br/>
-						<hr/>
-						<br/>
 
 				  		<!-- show the article! -->	
 				        <div class="entry">
