@@ -1,0 +1,74 @@
+/* Table of Contents */
+/* 1. Custom Fonts */
+/* 2. Text */
+/* 3. Links */
+/* 4. */
+/* 5.  */
+
+/* ========================= 1. Custom Fonts Install ========================= */
+/* Lato */ @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+
+/* Merriweather */ @import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,700,900);
+
+/* Bitter */ @import url(http://fonts.googleapis.com/css?family=Bitter:400,700);
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+/* Bebas Neue */
+@font-face {
+    font-family: BebasNeue;
+		src: url('fonts/BebasNeue-webfont.eot'),
+			url('fonts/BebasNeue-webfont.woff'),
+			url('fonts/BebasNeue-webfont.ttf'),
+			url('fonts/BebasNeue-webfont.svg');
+    font-weight:400;
+}
+
+
+/* ========================= 2. Text ========================= */
+
+
+/* General Font */
+body {
+	font-family: 'Open Sans', serif!important;
+	font-weight: 300!important;
+	font-size: 1.05em;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Headlines & Titles */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans', serif!important;
+	font-weight: 700!important;
+	color: #222;
+	line-height: 120%!important;
+}
+
+/* Article Content */
+div.entry p {
+	font-family: 'Merriweather';
+	font-size: 16px;
+	font-weight: 400;
+	color: #333;
+}
+
+/* Specific Things */
+.category-title {
+	font-family: 'BebasNeue', sans-serif!important;
+	font-size: 130%;
+	color: #666;
+	margin-bottom: -5px!important;
+}
+
+p {
+	line-height: 1.6!important;
+}
+
+
+/* ========================= 3. Links ========================= */
+
+/* ========================= 4.  ========================= */
+
+
+/* ========================= 5.  ========================= */
+

@@ -1,0 +1,170 @@
+/* ------------------------------------------
+  NECESSARY STYLES FOR RESPONSIVE NAV
+--------------------------------------------- */
+
+#nav-bar-bg {
+	background-color: #333;
+	height: 45px;
+	overflow: hidden;
+}
+
+#nav ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  list-style: none;
+}
+
+#nav li {
+  width: 100%;
+  display: block;
+}
+
+.js #nav {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+#nav.opened {
+  max-height: 9999px;
+}
+
+@media screen and (min-width: 40em) {
+  .js #nav {
+    position: relative;
+    max-height: none;
+  }
+  #nav-toggle {
+    display: none;
+  }
+}
+
+
+#nav,
+#nav * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#nav,
+#nav ul {
+  list-style: none;
+  width: 100%;
+  float: left;
+}
+
+#nav li {
+  float: left;
+  width: 100%;
+}
+
+@media screen and (min-width: 40em) {
+  #nav li {
+    width: auto;
+  }
+}
+
+#nav a {
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  padding: 0.6em .9em;
+  float: left;
+}
+
+#nav a:hover {
+  background-color: #252525;
+  color: #7a7a7a;
+}
+
+@media screen and (min-width: 40em) {
+  #nav a {
+    margin: 0;
+    float: left;
+    text-align: center;
+    border-bottom: 0;
+}
+}
+
+#nav ul ul a {
+	padding-left: 2em;
+  background-color: #c21616;
+}
+
+@media screen and (min-width: 40em) {
+  #nav ul ul a {
+    display: none;
+  }
+}
+
+#nav-toggle {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 40px;
+  height: 45px;
+  margin: 0 0 0px 0!important;
+  float: left;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url("../img/hamburger.png") no-repeat 50% 50% #e83737;
+}
+
+
+
+
+/* search bar */
+#nav-bar-search {
+	margin: 13px auto;
+	height: 25px;
+	padding: 0 15px 0 10px;
+	width: 40px;
+	
+	
+	background: url('../img/icons/search.png') no-repeat 13px 5px #3e3e3e;
+	background-size: 12px 12px;
+	white-space: nowrap;
+	
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	
+	
+	transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+}
+
+@media screen and (min-width: 40em) {
+  #nav-bar-search:focus {
+      outline: 0;
+      background: #fff;
+      width: 150px;
+      
+      box-shadow: 0 0 5px rgb(255, 0, 0);
+      -webkit-box-shadow: 0 0 5px rgb(255, 0, 0); 
+      -moz-box-shadow: 0 0 5px rgb(255, 0, 0); 
+  }
+}
+
+/* display for mobile */
+#nav-bar-search:focus {
+    outline: 0;
+    background: #fff;
+    width: 90%;
+    
+    
+    box-shadow: 0 0 5px rgb(255, 0, 0);
+    -webkit-box-shadow: 0 0 5px rgb(255, 0, 0); 
+    -moz-box-shadow: 0 0 5px rgb(255, 0, 0); 
+}
+
+

@@ -1,0 +1,338 @@
+<?php get_header(); ?>
+
+<!-- MAIN CONTENT -->
+
+<?php if ( is_home() and !is_paged() ) { ?>
+<?php } ?>
+
+	<!-- GET READY FOR A SLIDER (WITH OPTIONS CHECKBOX! 
+	<?php
+	if (isset($_POST['sport'])) {
+	    // do something
+	} 
+	?>
+	-->
+	
+	
+	<!-- ================================= -->
+	<!-- ======== BEGIN HOME PAGE ======== -->
+	<!-- ================================= -->
+	
+	<!-- Quick Story -->
+	
+	<div class="row" id="first-featured-article">
+	<?php query_posts('category_name=mini&showposts=1'); ?>
+			<?php $counter = 0; if (have_posts()) : while (have_posts()) : the_post(); ?>
+				
+				
+					 <?php if( $counter ) : ?>
+					 <? else : ?>
+						
+						<div class="large-6 columns">
+								<h4 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark">
+								<div class="clear"></div>
+								<?php the_title(); ?>
+								</a></h4>
+						</div>
+						
+						<div class="large-6 columns">
+							<p class="entry-summary"><?php echo get_excerpt(250); ?>
+							<a class="link" href="<?php the_permalink(); ?>">Read More &raquo;</a>
+						</div>	
+						
+					<?php endif; ?>
+					<?php $counter++; ?>
+					<?php endwhile; ?>
+	<?php endif; ?>
+	
+	<hr/>
+	
+	</div>
+
+		
+	<!--============= First Content (Featured) =================-->
+	<div class="row"><!-- create the row with sidebar -->
+	
+		<div class="large-9 columns"><!-- contain the shit on the left of the sidebar -->	
+			
+		  <div class="row">
+			  <!-- 5 Featured Article Title (left side) -->
+			  <div class="small-12 large-4 columns">
+			  	<?php query_posts('category_name=top-stories&showposts=6&offset=2'); ?>
+			  			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			  				
+	  						<p class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+	  						<hr/>
+	
+			  			<?php endwhile; ?>
+			  	<?php endif; ?>
+			  </div>
+	
+			  <!-- 2nd Featured Article w Picture -->
+			  <div class="small-12 large-8 columns">
+			  	<?php query_posts('category_name=top-stories&showposts=1&offset=1'); ?>
+		  			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		  				
+	
+		  				<!-- check for thumbnail -->
+		  				<a href="<?php the_permalink(); ?>">
+		  				<?php if ( has_post_thumbnail() ) {
+		  				the_post_thumbnail();
+		  				} else { ?>
+		  				<img src="<?php echo catch_that_image(); ?>"/>
+		  				<?php } ?>
+		  				</a>
+		  				
+		  				<!-- Title -->
+						<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+						<!-- Description -->
+						<p><?php the_excerpt(); ?></p>
+	
+	
+					<?php endwhile; ?>
+			  	<?php endif; ?>
+			  </div>
+		  </div><!-- end row -->
+ 
+	  </div><!-- end the inner content -->
+	  
+	 
+	  
+	  <!-- Popular/Archive Sidebar -->
+	  <aside class="small-12 large-3 columns">
+	  	<?php get_sidebar(); ?>
+	  </aside>
+	  
+
+	  
+	</div><!-- end row -->
+	
+	
+	<div class="large-12 columns">
+		<hr/>
+	</div>
+	
+	<!-- More Top Stories -->
+			  <div class="row">
+			  	<div class="large-12 columns">
+			  	<h6 class="subheader">More Top Stories</h6>
+				
+			  	<ul class="small-block-grid-2 large-block-grid-6">
+			  	
+			  		<?php query_posts('category_name=top-stories&showposts=6&offset=8'); ?>
+			  			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			  				
+							<li>
+			  				<!-- check for thumbnail -->
+			  				<div class="cropped-thumb-container">
+			  				<a href="<?php the_permalink(); ?>" class="cropped-thumb">
+				  				<?php if ( has_post_thumbnail() ) {
+				  				the_post_thumbnail('medium');
+				  				} else { ?>
+				  				<img src="<?php echo catch_that_image(); ?>"/>
+				  				<?php } ?>
+				  			</a>
+			  				</div>
+			  				</span>
+			  				
+			  				<!-- Title -->
+							<p class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+							</li>
+		
+						<?php endwhile; ?>
+				  	<?php endif; ?>
+			  	</ul>
+			  	
+			  	</div> 
+			  </div><!-- end row -->
+	
+	
+	<div class="large-12 columns">
+		<hr/>
+	</div>
+	
+	<!-- ======= Begin Category Displays ========= -->
+	<div class="row">
+		<!-- News -->
+		<div class="large-6 columns">
+			<h3>News</h3>
+			<?php query_posts('category_name=news&showposts=3'); ?>
+	  			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	  				
+						<h5 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+						<p><?php echo get_excerpt(250); ?></p>
+						<hr/>
+
+	  			<?php endwhile; ?>
+		  	<?php endif; ?>	
+		  	<a href="<?php echo home_url(); ?>/category/news" class="right"><span class="more-from-category">More articles</span></a>
+		</div>
+		
+		
+		
+		
+		<!-- Sports -->
+		<div class="large-6 columns">
+			<h3>Sports</h3>
+			<?php query_posts('category_name=sports&showposts=3'); ?>
+	  			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	  				
+						<h5 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+						<p><?php echo get_excerpt(250); ?></p>
+						<hr/>
+
+	  			<?php endwhile; ?>
+		  	<?php endif; ?>	
+		  	<a href="<?php echo home_url(); ?>/category/sports" class="right"><span class="more-from-category">More articles</span></a>
+		</div>
+		<br/>
+		<br/>
+		</div>
+		
+		
+		
+		<div class="breathing-room"></div>		
+		
+		
+		<div class="row">
+		<!-- Features -->
+		<div class="large-6 columns">
+			<h3>Features</h3>
+			<?php query_posts('category_name=features&showposts=3'); ?>
+	  			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	  				
+						<h5 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+						<p><?php echo get_excerpt(250); ?></p>
+						<hr/>
+	
+	  			<?php endwhile; ?>
+		  	<?php endif; ?>	
+		  	<a href="<?php echo home_url(); ?>/category/features" class="right"><span class="more-from-category">More articles</span></a>
+		</div>
+		
+		<!-- Opinions -->
+		<div class="large-6 columns end">
+			<h3>Opinions</h3>
+			<?php query_posts('category_name=opinions&showposts=3'); ?>
+	  			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	  				
+						<h5 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+						<p><?php echo get_excerpt(300); ?></p>
+						<hr/>
+	
+	  			<?php endwhile; ?>
+		  	<?php endif; ?>	
+		  	<a href="<?php echo home_url(); ?>/category/opinions" class="right"><span class="more-from-category">More articles</span></a>
+		</div>
+	</div><!-- end row -->
+
+
+
+	<div class="breathing-room"></div>	
+
+	<div class="large-12 columns">
+		<hr/>
+	</div>
+
+					
+			<!-- ============ Videos ============ -->
+					<div class="row">
+						<div class="large-8 columns">
+							<h3>Latest Video</h3>
+							
+							
+							<!-- YouTube Channel -->
+		
+							<?php query_posts('category_name=Videos&showposts=1'); ?>
+									<?php $counter = 0; if (have_posts()) : while (have_posts()) : the_post(); ?>
+										
+										
+											 <?php if( $counter ) : ?>
+												
+												<!-- Display other videos -->
+												
+												<div class="six columns">
+												<div class="flex-video" style="margin-left: -14px;">				
+													<?php the_content(); ?>
+												</div>
+												</div>
+												
+							
+											 <? else : ?>
+												
+												<!-- Display most recent video -->
+												
+												<div class="twelve columns">
+												<div class="flex-video" style="margin-left: -14px;">				
+													<?php the_content(); ?>
+												</div>
+												</div>
+												
+												
+									<?php endif; ?>
+									<?php $counter++; ?>
+									<?php endwhile; ?>
+									<?php endif; ?>
+	
+						
+						</div><!-- end videos -->			
+						
+						
+						<div class="large-4 columns">
+							<!-- YouTube Channel -->
+							<h3>Older Videos</h3>
+		
+							<?php query_posts('category_name=Videos&showposts=2&offset=1'); ?>
+									<?php $counter = 0; if (have_posts()) : while (have_posts()) : the_post(); ?>
+										
+										
+											 <?php if( $counter ) : ?>
+												
+												<!-- Display other videos -->
+												
+												<div class="six columns">
+												<div class="flex-video" style="margin-left: -14px;">				
+													<?php the_content(); ?>
+												</div>
+												</div>
+												
+							
+											 <? else : ?>
+												
+												<!-- Display most recent video -->
+												
+												<div class="twelve columns">
+												<div class="flex-video" style="margin-left: -14px;">				
+													<?php the_content(); ?>
+												</div>
+												</div>
+												
+												
+									<?php endif; ?>
+									<?php $counter++; ?>
+									<?php endwhile; ?>
+									<?php endif; ?>
+									
+									<!-- Read All Category -->
+									<div class="large-12 columns">
+									<a href="<?php bloginfo('home'); ?>/category/videos"><span class="more-from-category">View all videos</span></a>
+									</div>
+	
+						
+						</div><!-- end videos -->			
+			
+					</div>
+			
+		</div>
+		</div>
+		    
+	
+		
+			
+		
+		<?php get_footer(); ?>
+		
+	<?php wp_footer(); ?>			
+	
+	</body>
+</html>
